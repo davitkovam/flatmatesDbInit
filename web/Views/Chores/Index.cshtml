@@ -1,0 +1,65 @@
+@model IEnumerable<web.Models.Chore>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.userID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.householdID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.choredesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.repetition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.finished)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.userID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.householdID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.choredesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.repetition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.finished)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.choreID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.choreID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.choreID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

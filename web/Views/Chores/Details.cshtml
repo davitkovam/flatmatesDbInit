@@ -1,0 +1,54 @@
+@model web.Models.Chore
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Chore</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.userID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.userID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.householdID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.householdID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.choredesc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.choredesc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.duration)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.duration)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.repetition)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.repetition)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.finished)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.finished)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.choreID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

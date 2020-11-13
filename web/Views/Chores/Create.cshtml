@@ -1,0 +1,55 @@
+@model web.Models.Chore
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Chore</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="userID" class="control-label"></label>
+                <input asp-for="userID" class="form-control" />
+                <span asp-validation-for="userID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="householdID" class="control-label"></label>
+                <input asp-for="householdID" class="form-control" />
+                <span asp-validation-for="householdID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="choredesc" class="control-label"></label>
+                <input asp-for="choredesc" class="form-control" />
+                <span asp-validation-for="choredesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duration" class="control-label"></label>
+                <input asp-for="duration" class="form-control" />
+                <span asp-validation-for="duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="repetition" class="control-label"></label>
+                <input asp-for="repetition" class="form-control" />
+                <span asp-validation-for="repetition" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="finished" /> @Html.DisplayNameFor(model => model.finished)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
